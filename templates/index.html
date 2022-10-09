@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %} INICIAR SESION {% endblock %}
+{% block head %}
+{{super()}}
+    
+{% endblock %}
+{% block body %}
+<body class="baseBody">
+<div></div>
+        <div>
+            <form action="/login" method="GET">
+            <input class="button" type="submit" name="ingresar" value="ingresar" >
+            </form>
+        </div>
+</div>
+</body>
+{% endblock %}

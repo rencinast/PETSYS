@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %} PETSYS {% endblock %}
+{% block head %}
+{{super()}}
+    <div class="info">
+        <h1 class="encabezado"> PETSYS </h1>
+    </div>
+{% endblock %}
+{% block body %}
+<body class="baseBody">
+    <div>
+        <div>
+            <form action="/usuario_menu" method="POST">
+                <div style="margin-left: 33px; margin-top:5px;">
+                    <label class="textos" for="texto">Iniciar sesión</label>
+                </div>
+                <div style="margin-top:5px;">
+                    <label class="textos"  for="nombre_corto">Nombre:</label>
+                </div>
+                <div>
+                    <input class="text" type="text" name="nombre_corto">
+                </div>
+                <div style="margin-top:5px;">
+                    <label class="textos" for="password">Contraseña:</label>
+                </div>
+                <div>
+                    <input class="text" type="text" name="password">
+                </div>
+                <div>
+                    <input class="button" style="margin-left: 35px; margin-top:5px;" type="submit" name="entrar" value="ENTRAR">
+                </div>  
+            </form>
+
+        </div>
+    </div>
+    <img class="imagen" src="static/animales.jpg">
+    <h1>{{mensaje}}</h1>
+</body>
+{% endblock %}
