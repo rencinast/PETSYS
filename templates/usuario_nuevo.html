@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %} VETERINARIA PATITO {% endblock %}
+{% block head %}
+{{super()}}
+    <div class="info">
+        <h1 class="encabezado"> CREAR NUEVA CUENTA </h1>
+    </div>
+{% endblock %}
+{% block body %}
+<body class="baseBody">
+<div></div>
+    <form action="" method="POST">
+        <div>
+            <label class="textos" for="email"> Correo electrionico </label>
+        </div>
+        <div>
+            <input class="text" type="text" name="email" id="email">
+        </div>
+        <div>
+            <label class="textos" for="user"> Nombre </label>
+        </div>
+        <div>
+            <input class="text" type="text" name="nombre" id="nombre">
+        </div>
+        <div>
+            <label class="textos" for="pswd"> Contraseña </label>
+        </div>
+        <div>
+            <input class="text" type="text" name="pswd" id="pswd">
+        </div>
+        <div>
+            <input class="button" type="submit" name="registrar" value="Registrarse">
+        </div>
+    </form>
+</div>
+</body>
+{% endblock %}

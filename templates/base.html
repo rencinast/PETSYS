@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}  {% endblock %}</title>
+    <style>
+
+        div.info {
+            background: #00467f;
+            background: -webkit-linear-gradient(to right, #00467f, #a5cc82);
+            background: linear-gradient(to right, #00467f, #a5cc82);
+            height: 50px;
+            padding-left:10px; 
+            border-radius: 10px;
+        }
+
+        body.baseBody {
+            background-color: whitesmoke;
+        }
+
+        img.imagen {
+            display: flex;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        input.text {
+            padding: 3px;
+            font-size: 15px;
+            border-width: 1px;
+            border-color: #a5cc82;
+            background-color: #ffffff;
+            color: #000000;
+            border-style: outset;
+            border-radius: 50px;
+            box-shadow: 0px 0px 9px rgba(0,70,127,.39);
+            text-shadow: 0px 0px 0px rgba(66,66,66,.0);
+            margin-top: auto;
+        }        
+
+        input.button {
+            background: -webkit-linear-gradient(to right, #00467f, #a5cc82);
+            background: linear-gradient(to right, #00467f, #a5cc82);
+	        background-color:#00467f;
+	        border-radius:21px;
+	        display:inline-block;
+	        cursor:pointer;
+	        color:#ffffff;
+	        font-family:fantasy;
+	        font-size: 13px;
+	        font-weight:bold;
+	        padding:13px 32px;
+	        text-decoration:none;
+	        text-shadow:1px 1px 0px #3d768a;
+        }
+
+        a.link {
+            font-family: fantasy;
+            font-size: 15px;
+            letter-spacing: 1px;
+            word-spacing: 2px; 
+            color: #00467f;
+            font-weight: normal;
+            text-decoration: none;
+            background-color:whitesmoke;
+            padding: 0px;
+            margin: 0px;
+            font-weight: 700;
+            text-decoration: rgb(68, 68, 68);
+            font-style: normal;
+            font-variant: normal;
+            text-transform: none; 
+        }
+
+        label.textos {
+            font-family: fantasy;
+            font-size: 15px;
+            letter-spacing: 1px;
+            word-spacing: 2px;
+            color: #00467F;
+            font-weight: 700;
+            text-decoration: rgb(68, 68, 68);
+            font-style: normal;
+            font-variant: normal;
+            text-transform: none;
+        }
+        .button
+        {
+            border: 2px solid gray;
+            color: black;
+            padding: 15 px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+        .button:hover
+        {
+            background: bisque;
+            color: green;
+        }
+
+        h1.encabezado {
+            color:white; 
+            text-align:initial; 
+            font-family: fantasy; 
+            margin-top: 5px;
+        }
+
+    </style>
+
+    {% endblock %}
+</head>
+<body>
+    <div>
+        {% if 'cliente' in session  %}
+             <div><h3>{{session['usuario']}}</h3></div>
+             {% set imagen = "/static/avatar/%s.png" % session['usuario'] %}
+             {% if os.path.exists("."+imagen) %}
+             <div><img src="{{imagen}}" width="50"></div>
+             {% else %}
+             <div><img src="/static/avatar/avatar.png" width="50"></div>
+             {% endif %} 
+        {% else %}
+              <h3>Usuario invitado</h3>
+        {% endif %}
+        </div>
+    {% block body %}
+
+    {% endblock %}
+</body>
+</html>
